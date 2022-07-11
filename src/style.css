@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+*,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  color: #fff;
+}
+
+body {
+  background-color: black;
+}
+
+main {
+  margin: 15px auto;
+  max-width: 65vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+header {
+  padding: 12px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid rebeccapurple;
+}
+
+button {
+  border: none;
+  background-color: inherit;
+  transition: all 0.3s ease;
+}
+
+header > button {
+  padding: 5px 10px;
+}
+
+main > div {
+  width: 100%;
+  padding: 8px 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid rebeccapurple;
+  opacity: 0.7;
+}
+
+input[name=listInput] {
+  width: 100%;
+  padding: 5px 8px;
+  border: none;
+  background-color: transparent;
+  font-size: 1.1em;
+}
+
+.addtask {
+  margin: 0 8px;
+  padding: 5px 8px;
+  background-color: rebeccapurple;
+  border-radius: 2px;
+  color: #fff;
+}
+
+li > button {
+  display: flex;
+  gap: 8px;
+}
+
+button > i {
+  padding: 5px 8px;
+  transition: all 0.3s ease;
+}
+
+a > i {
+  font-size: large;
+  transition: 0.3s ease;
+}
+
+button > i:hover {
+  transform: scale(1.2);
+}
+
+ul {
+  list-style-type: none;
+}
+
+li > div {
+  width: 100%;
+  display: flex;
+  gap: 12px;
+}
+
+div > p {
+  width: 100%;
+  padding: 2px;
+  word-wrap: break-word;
+}
+
+li {
+  padding: 12px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid rebeccapurple;
+}
+
+.clear {
+  width: 100%;
+  padding: 12px 10px;
+  text-align: center;
+  border: 1px solid rebeccapurple;
+  font-size: 1em;
+  transition: all 0.3s ease;
+}
+
+.clear:hover {
+  transform: scale(0.99);
+  opacity: 0.7;
+}
+
+button:hover {
+  transform: scale(1.2);
+}
+
+.completed {
+  text-decoration: line-through;
+  opacity: 0.6;
+  background: cornflowerblue;
+}
+
+.refresh:hover {
+  transform: rotate(360deg);
+}
+
+footer {
+  padding: 8px 0;
+  text-align: center;
+  background: rebeccapurple;
+}
+
+a > i:hover {
+  transform: scale(1.1) rotate(360deg);
+}
+
+@media screen and (max-width: 768px) {
+  main {
+    max-width: 90vw;
+  }
+}
