@@ -38,7 +38,7 @@ function createTaskList() {
     list.appendChild(task);
 
     delIcon.addEventListener('click', () => {
-      removeTask(taskArr[i].index);
+      removeTask(taskArr[i].index, taskArr);
       createTaskList();
       storeTask();
       getTask();
@@ -56,7 +56,7 @@ function createTaskList() {
     });
 
     input.addEventListener('change', () => {
-      update(i, input);
+      update(i, input, taskArr);
       storeTask();
       getTask();
     });
@@ -72,8 +72,7 @@ function createTaskList() {
 
 addBtn.addEventListener('click', () => {
   if (listInput.value === '') return;
-
-  addTask();
+  addTask(listInput, taskArr);
   storeTask();
   getTask();
   createTaskList();
@@ -92,7 +91,7 @@ refresh.addEventListener('click', () => {
 });
 
 clearBtn.addEventListener('click', () => {
-  clearCompleted();
+  clearCompleted(taskArr);
   storeTask();
   getTask();
   createTaskList();

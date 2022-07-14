@@ -2,7 +2,7 @@ import { taskArr } from './task.js';
 
 export const clearBtn = document.querySelector('.clear');
 
-export function update(x, input) {
+export function update(x, input, taskArr) {
   if (taskArr[x].completed === false) {
     taskArr[x].completed = true;
     input.checked = true;
@@ -12,15 +12,9 @@ export function update(x, input) {
     input.checked = false;
     input.parentElement.parentElement.classList.remove('completed');
   }
-}
+};
 
-export const clearCompleted = function () {
-  const arr = [];
-  taskArr.forEach((task) => {
-    if (task.completed === true) {
-      arr.push(task);
-    }
-  });
-  taskArr = taskArr.filter((task) => !arr.includes(task));
+export function clearCompleted (taskArr) {
+  taskArr = taskArr.filter((task) => task.completed === false);
   return taskArr;
 };
