@@ -2,7 +2,9 @@ import './style.css';
 import {
   taskArr, addTask, removeTask, storeTask, getTask,
 } from './task.js';
-import { clearBtn, update, clearCompleted, edit } from './interaction.js';
+import {
+  clearBtn, update, clearCompleted, edit,
+} from './interaction.js';
 
 const list = document.querySelector('.tasklist');
 const listInput = document.querySelector('#listInput');
@@ -84,7 +86,7 @@ refresh.addEventListener('click', () => {
 });
 
 clearBtn.addEventListener('click', () => {
-  let result = clearCompleted(taskArr);
+  const result = clearCompleted(taskArr);
   storeTask(result);
   getTask();
   createTaskList();

@@ -1,9 +1,9 @@
-const listInput = document.querySelector('#listInput');
+const listInput = document.querySelector('#listInput'); //eslint-disable-line
 
 export let taskArr = []; //eslint-disable-line
 
 export function addTask(listInput, taskArr) {
-   const taskDetail = {
+  const taskDetail = {
     description: listInput.value,
     completed: false,
     index: taskArr.length,
