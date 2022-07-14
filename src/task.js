@@ -1,8 +1,8 @@
-const listInput = document.querySelector('#listInput');
+const listInput = document.querySelector('#listInput'); //eslint-disable-line
 
 export let taskArr = []; //eslint-disable-line
 
-export function addTask() {
+export function addTask(listInput, taskArr) {
   const taskDetail = {
     description: listInput.value,
     completed: false,
@@ -12,7 +12,7 @@ export function addTask() {
   taskArr.push(taskDetail);
 }
 
-export function removeTask(id) {
+export function removeTask(id, taskArr) {
   taskArr.forEach((task, index) => {
     if (task.index === id) {
       taskArr.splice(index, 1);
@@ -20,7 +20,7 @@ export function removeTask(id) {
   });
 }
 
-export function storeTask() {
+export function storeTask(taskArr) {
   localStorage.setItem('taskCollection', JSON.stringify(taskArr));
 }
 
