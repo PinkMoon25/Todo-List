@@ -1,9 +1,8 @@
 /**
  * @jest-environment jsdom
  */
-const {update, clearCompleted} = require('../src/interaction.js');
+const {update, clearCompleted, edit} = require('../src/interaction.js');
 let taskArr = require('../src/task.js');
-// Object.defineProperty(taskArr, { writable: true});
 
 test('should update to true', ()=>{
   const body = document.querySelector('body');
@@ -48,3 +47,13 @@ test('should remove the completed task', ()=>{
   expect(result[0].completed).toBeFalsy();
   expect(result[0].description).toMatch(/stay/);
 }); 
+
+test('content shoul be editable', ()=>{
+  const body = document.querySelector('body');
+  const taskContent = document.createElement('p');
+  body.appendChild(taskContent);
+
+  edit(taskContent);
+
+  expect(taskContent.getAttribute('contentEditable')).toBeTruthy();
+});

@@ -20,7 +20,7 @@ export function removeTask(id, taskArr) {
   });
 }
 
-export function storeTask() {
+export function storeTask(taskArr) {
   localStorage.setItem('taskCollection', JSON.stringify(taskArr));
 }
 

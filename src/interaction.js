@@ -1,4 +1,4 @@
-import { taskArr } from './task.js';
+import { storeTask, getTask } from './task.js';
 
 export const clearBtn = document.querySelector('.clear');
 
@@ -17,4 +17,14 @@ export function update(x, input, taskArr) {
 export function clearCompleted (taskArr) {
   taskArr = taskArr.filter((task) => task.completed === false);
   return taskArr;
+};
+
+export function edit(taskContent, taskArr, i){
+  taskContent.setAttribute('contentEditable', 'true');
+  taskContent.focus();
+    taskContent.addEventListener('focusout', () => {
+    taskArr[i].description = taskContent.textContent;
+    storeTask(taskArr);
+    getTask();
+  });
 };
